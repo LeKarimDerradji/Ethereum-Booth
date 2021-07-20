@@ -1,22 +1,20 @@
 //SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.6;
 
-import "hardhat/console.sol";
+contract EthereumBooth {
 
-contract Greeter {
-    string private _greeting;
-
-    constructor(string memory greeting_) {
-        console.log("Deploying a Greeter with greeting:", greeting_);
-        _greeting = greeting_;
+    enum Status {live, expired, banned}
+    
+    struct User {
+        uint256 userId;
+        uint256 registrationDate;
+        uint256 credit;
+        uint64 numbers;
     }
 
-    function greet() public view returns (string memory) {
-        return _greeting;
+    constructor() {
+        
     }
 
-    function setGreeting(string memory greeting_) public {
-        console.log("Changing greeting from '%s' to '%s'", _greeting, greeting_);
-        _greeting = greeting_;
-    }
+    
 }
